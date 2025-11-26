@@ -18,12 +18,14 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 5000,
+    allowedHosts: ["all"],
   },
-  vite: { 
+  vite: {
     plugins: [tailwindcss()],
     server: {
       host: "0.0.0.0",
       strictPort: false,
+      allowedHosts: [".replit.dev", ".loca.lt"],
     },
   },
   integrations: [
