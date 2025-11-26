@@ -33,10 +33,6 @@ outputType = "webview"
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 35239
-externalPort = 3000
-
 [deployment]
 build = ["sh", "-c", "astro build"]
 deploymentTarget = "static"
