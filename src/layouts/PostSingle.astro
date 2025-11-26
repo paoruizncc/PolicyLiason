@@ -1,13 +1,12 @@
 ---
 import BlogCard from "@/components/BlogCard.astro";
-import Share from "@/components/Share.astro";
 import Disqus from "@/helpers/Disqus";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import dateFormat from "@/lib/utils/dateFormat";
 import similarItems from "@/lib/utils/similarItems";
 import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
 import { render } from "astro:content";
-import { FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
+import BlogMeta from "@/components/BlogMeta";
 import ImageMod from "./components/ImageMod.astro";
 
 const COLLECTION_FOLDER = "blog";
@@ -41,12 +40,12 @@ const { title, description, author, categories, image, date, tags } = post.data;
         <ul class="mb-4">
           <li class="mr-4 inline-block">
             <a href={`/authors/${slugify(author)}`}>
-              <FaRegUserCircle className={"mr-2 -mt-1 inline-block"} />
+              <BlogMeta client:load type="user" className="mr-2 -mt-1 inline-block" />
               {humanize(author)}
             </a>
           </li>
           <li class="mr-4 inline-block">
-            <FaRegFolder className={"mr-2 -mt-1 inline-block"} />
+            <BlogMeta client:load type="folder" className="mr-2 -mt-1 inline-block" />
             {
               categories.map((category: string, index: number) => (
                 <a href={`/categories/${slugify(category)}`}>
@@ -57,7 +56,7 @@ const { title, description, author, categories, image, date, tags } = post.data;
             }
           </li>
           <li class="mr-4 inline-block">
-            <FaRegClock className={"mr-2 -mt-1 inline-block"} />
+            <BlogMeta client:load type="clock" className="mr-2 -mt-1 inline-block" />
             {dateFormat(date)}
           </li>
         </ul>
@@ -81,15 +80,6 @@ const { title, description, author, categories, image, date, tags } = post.data;
                 ))
               }
             </ul>
-          </div>
-          <div class="flex items-center lg:col-4">
-            <h5 class="mr-3">Share :</h5>
-            <Share
-              className="social-icons"
-              title={title}
-              description={description}
-              slug={post.id}
-            />
           </div>
         </div>
         <Disqus className="mt-20" client:load />

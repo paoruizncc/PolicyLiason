@@ -1,51 +1,59 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Astro Project"
-  content: "Astroplate is a free starter template built with Astro and TailwindCSS, providing everything you need to jumpstart your Astro project and save valuable time."
+  title: "Find the Best Insurance at the Best Price"
+  content: "PolicyLiason connects you with the highest quality insurance policies at the most competitive rates. We help you find coverage that fits your needs and budget perfectly."
   image: "/images/banner.png"
   button:
-    enable: true
-    label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/astroplate"
+    enable: false
+    label: ""
+    link: ""
 
 # Features
 features:
-  - title: "What's Included in Astroplate"
-    image: "/images/service-1.png"
-    content: "Astroplate is a comprehensive starter template that includes everything you need to get started with your Astro project. What's Included in Astroplate"
+  - title: "Access to the Best Insurance Options"
+    icon: "rocket"
+    image: "/images/service-1.jpg"
+    content: "PolicyLiason connects you with a wide network of top-rated insurance providers, ensuring you have access to the best coverage options at the most competitive prices."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Astro and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - "Extensive network of trusted insurance providers"
+      - "Comprehensive coverage across all insurance types"
+      - "Competitive pricing and cost comparison"
+      - "Personalized policy recommendations"
+      - "No hidden fees or surprises"
+      - "Transparent pricing from start to finish"
     button:
       enable: false
-      label: "Get Started Now"
-      link: "#"
+      label: ""
+      link: ""
 
-  - title: "Discover the Key Features Of Astro"
+  - title: "Built for Trust and Transparency"
+    icon: "planet"
     image: "/images/service-2.png"
-    content: "Astro is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+    content: "We believe in complete transparency when it comes to insurance. Our recommendations are unbiased, our pricing is clear, and we always put your best interests first."
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+      - "Unbiased policy recommendations"
+      - "Clear pricing with no hidden fees"
+      - "We do not sell your information to third parties"
+      - "No conflicts of interest in our recommendations"
+      - "Transparent comparison of all available options"
+      - "Full disclosure of policy terms and conditions"
     button:
-      enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/astroplate"
+      enable: false
+      label: ""
+      link: ""
 
-  - title: "The Top Reasons to Choose Astro for Your Next Project"
+  - title: "Expert Insurance Matching"
+    icon: "telescope"
     image: "/images/service-3.png"
-    content: "With Astro, you can build modern and content-focused websites without sacrificing performance or ease of use."
+    content: "Our experienced team matches you with the perfect insurance policy for your unique needs, ensuring optimal coverage at the best possible price."
     bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Astro a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "Personalized policy matching based on your needs"
+      - "Expert guidance through the selection process"
+      - "Focus on maximum coverage at minimum cost"
+      - "Professional support when you need it"
+      - "Years of industry expertise and relationships"
+      - "Dedicated to finding you the best value"
     button:
       enable: false
       label: ""

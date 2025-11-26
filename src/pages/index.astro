@@ -3,15 +3,18 @@ import ImageMod from "@/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import CallToAction from "@/partials/CallToAction.astro";
-import Testimonial from "@/partials/Testimonial.astro";
-import { FaCheck } from "react-icons/fa";
+import CheckIcon from "@/components/CheckIcon";
+import FeatureIcon from "@/components/FeatureIcon";
+import config from "@/config/config.json";
 
 const homepage = await getListPage("homepage", "-index");
-const call_to_action = await getListPage("ctaSection", "call-to-action");
-const testimonial = await getListPage("testimonialSection", "testimonial");
 
 const { banner, features } = homepage.data;
+const { logo, logo_darkmode, title } = config.site;
+const { theme_switcher } = config.settings;
+
+// Map feature icons by index
+const iconMap: ("rocket" | "planet" | "telescope")[] = ["rocket", "planet", "telescope"];
 ---
 
 <Base>
@@ -20,6 +23,43 @@ const { banner, features } = homepage.data;
     <div class="container">
       <div class="row justify-center">
         <div class="lg:col-7 md:col-9 mb-8 text-center">
+          <!-- Logo -->
+          <div class="mb-8 flex justify-center">
+            <a href="/" class="inline-block">
+              {
+                logo && (
+                  <ImageMod
+                    src={logo}
+                    class={`inline-block ${theme_switcher && "dark:hidden"}`}
+                    width={240}
+                    height={240}
+                    alt={title}
+                    style={{
+                      height: "120px",
+                      width: "120px",
+                    }}
+                    format="webp"
+                  />
+                )
+              }
+              {
+                theme_switcher && logo_darkmode && (
+                  <ImageMod
+                    src={logo_darkmode}
+                    class="hidden dark:inline-block"
+                    width={240}
+                    height={240}
+                    alt={title}
+                    style={{
+                      height: "120px",
+                      width: "120px",
+                    }}
+                    format="webp"
+                  />
+                )
+              }
+            </a>
+          </div>
           <h1
             set:html={markdownify(banner.title)}
             class="mb-4 text-h3 lg:text-h1"
@@ -45,7 +85,7 @@ const { banner, features } = homepage.data;
             <div class="col-12">
               <ImageMod
                 src={banner.image}
-                height={380}
+                height={533}
                 width={1200}
                 alt="banner"
                 format="webp"
@@ -65,14 +105,12 @@ const { banner, features } = homepage.data;
         <div class="container">
           <div class="row items-center justify-between">
             <div
-              class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
+              class={`mb:md-0 mb-6 md:col-5 flex justify-center items-center ${index % 2 !== 0 && "md:order-2"}`}
             >
-              <ImageMod
-                src={feature.image}
-                height={480}
-                width={520}
-                alt={feature.title}
-                format="webp"
+              <FeatureIcon
+                client:load
+                type={iconMap[index]}
+                className="w-48 h-48 text-black dark:text-white"
               />
             </div>
             <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
@@ -81,7 +119,7 @@ const { banner, features } = homepage.data;
               <ul>
                 {feature.bulletpoints.map((bullet: string) => (
                   <li class="relative mb-4 pl-6">
-                    <FaCheck className={"absolute left-0 top-1.5"} />
+                    <CheckIcon client:load className="absolute left-0 top-1.5" />
                     <span set:html={markdownify(bullet)} />
                   </li>
                 ))}
@@ -98,7 +136,4 @@ const { banner, features } = homepage.data;
     ))
   }
   <!-- /Features -->
-
-  <Testimonial testimonial={testimonial} />
-  <CallToAction call_to_action={call_to_action} />
 </Base>

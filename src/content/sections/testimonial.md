@@ -1,27 +1,27 @@
 ---
 enable: true
-title: "What Users Are Saying About Astroplate"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Astroplate."
+title: "What Our Users Say About PolicyLiason"
+description: "Don't just take our word for it - hear from businesses and individuals who trust PolicyLiason for their policy management needs."
 
 # Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Sarah Johnson"
+    designation: "Small Business Owner"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "PolicyLiason made it incredibly easy to set up clear privacy policies and consent forms for my business. The transparency and ease of use are exactly what I needed."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Michael Chen"
+    designation: "Startup Founder"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "As a startup, having clear and compliant policies is crucial. PolicyLiason provided everything we needed without the complexity. Highly recommend!"
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Emily Rodriguez"
+    designation: "Product Manager"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "The best part about PolicyLiason is their commitment to not selling user data. Finally, a service that practices what it preaches about privacy!"
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "David Thompson"
+    designation: "Freelance Consultant"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "Setting up policies used to be a headache. PolicyLiason simplified everything with their clear templates and straightforward approach. Saved me hours of work!"
 ---

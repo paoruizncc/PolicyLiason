@@ -2,9 +2,52 @@
   @apply bg-linear-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-light dark:to-darkmode-body;
 }
 
+/* Blue gradient utilities */
+@utility bg-gradient-blue {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+}
+
+@utility bg-gradient-blue-subtle {
+  background: linear-gradient(135deg, rgba(240, 244, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.dark .bg-gradient-blue-subtle {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+}
+
+/* Blue shadow utilities */
+@utility shadow-blue {
+  box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.2), 0 8px 10px -6px rgba(30, 64, 175, 0.15);
+}
+
+@utility shadow-blue-lg {
+  box-shadow: 0 20px 50px -12px rgba(30, 64, 175, 0.25), 0 12px 20px -8px rgba(30, 64, 175, 0.2);
+}
+
+/* Blue accent border */
+@utility border-accent {
+  border-color: #3b82f6;
+  border-width: 2px;
+}
+
+/* Blue hover effect */
+@utility hover-lift {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.2);
+}
+
 /* form style */
 @utility form-input {
-  @apply w-full rounded border-transparent bg-light px-6 py-4 text-text-dark placeholder:text-text-light focus:border-primary dark:focus:border-darkmode-primary focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-light dark:text-darkmode-text-light;
+  @apply w-full rounded-lg border-2 border-transparent bg-light px-6 py-4 text-text-dark placeholder:text-text-light focus:border-primary dark:focus:border-darkmode-primary focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-light dark:text-darkmode-text-light transition-all duration-300;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 @utility form-label {

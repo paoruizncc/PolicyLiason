@@ -1,5 +1,11 @@
 .header {
-  @apply bg-body dark:bg-darkmode-body py-6;
+  @apply bg-body dark:bg-darkmode-body py-6 transition-all duration-300;
+  border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.dark .header {
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 /* navbar items */
@@ -19,7 +25,27 @@
 }
 
 .nav-link {
-  @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition lg:px-2 lg:py-3;
+  @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition-all duration-300 lg:px-3 lg:py-3 relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+.nav-link[aria-current="page"]::after {
+  width: 80%;
 }
 
 .nav-dropdown {
@@ -31,7 +57,9 @@
 }
 
 .nav-dropdown-list {
-  @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm;
+  @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded-lg p-4;
+  box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.15), 0 8px 10px -6px rgba(30, 64, 175, 0.1);
+  border: 1px solid rgba(30, 64, 175, 0.1);
 }
 
 .nav-dropdown-item {
@@ -47,7 +75,12 @@
   @apply inline-flex;
 
   label {
-    @apply bg-border relative inline-block h-4 w-6 cursor-pointer rounded-2xl lg:w-10;
+    @apply relative inline-block h-4 w-6 cursor-pointer rounded-2xl lg:w-10 transition-all duration-300;
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  }
+
+  .dark label {
+    background: linear-gradient(135deg, #1e293b, #334155);
   }
 
   input {
@@ -55,7 +88,13 @@
   }
 
   span {
-    @apply bg-dark absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300 dark:bg-white;
+    @apply absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    box-shadow: 0 2px 4px rgba(30, 64, 175, 0.3);
+  }
+
+  .dark span {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
   }
 
   input:checked + label {
@@ -63,4 +102,20 @@
       @apply lg:left-4;
     }
   }
+}
+
+/* Floating theme switcher - when used in fixed position */
+.fixed .theme-switcher {
+  @apply p-3 rounded-full bg-white dark:bg-darkmode-body transition-all duration-300;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2), 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(30, 64, 175, 0.1);
+}
+
+.fixed .theme-switcher:hover {
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.dark .fixed .theme-switcher {
+  border-color: rgba(59, 130, 246, 0.2);
 }

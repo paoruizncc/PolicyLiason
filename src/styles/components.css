@@ -20,7 +20,12 @@
   @apply inline-block;
 }
 .social-icons li a {
-  @apply flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-center leading-9 text-white dark:bg-darkmode-primary dark:text-text-dark;
+  @apply flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-center leading-9 text-white dark:bg-darkmode-primary dark:text-text-dark transition-all duration-300;
+  box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2);
+}
+.social-icons li a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
 }
 .social-icons li a svg {
   @apply h-5 w-5;
@@ -52,8 +57,9 @@
 }
 
 .notice.note {
-  @apply text-[#1B83E2];
+  @apply text-[#1e40af] bg-[#eff6ff] dark:bg-[#1e3a8a]/10;
   @apply border-current;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.1);
 }
 
 .notice.tip {
@@ -85,7 +91,8 @@
 }
 
 .tab-nav-item.active {
-  @apply border-b-[3px] border-dark opacity-100 dark:border-darkmode-primary;
+  @apply border-b-[3px] border-primary opacity-100 dark:border-darkmode-primary bg-white dark:bg-darkmode-body;
+  box-shadow: 0 -2px 8px rgba(30, 64, 175, 0.1);
 }
 
 .tab-content {
@@ -106,7 +113,13 @@
 
 /* accordion */
 .accordion {
-  @apply mb-6 overflow-hidden rounded-lg border border-border bg-light dark:border-darkmode-border dark:bg-darkmode-light;
+  @apply mb-6 overflow-hidden rounded-lg border border-border bg-light dark:border-darkmode-border dark:bg-darkmode-light transition-all duration-300;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.accordion:hover {
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
+  border-color: #3b82f6;
 }
 
 .accordion-header {
