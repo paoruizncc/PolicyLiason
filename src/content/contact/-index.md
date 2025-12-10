@@ -12,7 +12,7 @@ Have questions about our policies, consent forms, or services? We're here to hel
 - Email: contact@policyliason.com
 - Privacy inquiries: privacy@policyliason.com
 - Legal inquiries: legal@policyliason.com
-- Phone: (555) 123-4567
+- Phone: (470) 315-2860
 
 **Office Hours:**
 Monday - Friday: 9:00 AM - 5:00 PM EST
