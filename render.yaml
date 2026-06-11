@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: policy-liaison
+    runtime: static
+    buildCommand: yarn && yarn build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: 22.20.0

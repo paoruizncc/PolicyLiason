@@ -15,18 +15,8 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: { service: sharp() },
-  server: {
-    host: "0.0.0.0",
-    port: 5000,
-    allowedHosts: ["all"],
-  },
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      host: "0.0.0.0",
-      strictPort: false,
-      allowedHosts: [".replit.dev", ".loca.lt"],
-    },
   },
   integrations: [
     react(),
