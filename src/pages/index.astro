@@ -186,7 +186,7 @@ const iconMap: ("rocket" | "planet" | "telescope")[] = ["rocket", "planet", "tel
           </AnimatedSection>
 
           <AnimatedSection client:visible direction="up" delay={0.15}>
-            <form method="POST" action="#">
+            <form id="lead-form-form" method="POST" action="#">
               <div class="row">
                 <div class="mb-6 md:col-6">
                   <label for="first_name" class="form-label">
@@ -371,10 +371,55 @@ const iconMap: ("rocket" | "planet" | "telescope")[] = ["rocket", "planet", "tel
 
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+
+            <div
+              id="lead-form-success"
+              class="mt-8 hidden rounded-lg border-2 border-primary bg-light p-8 text-center dark:bg-darkmode-light"
+              role="status"
+              aria-live="polite"
+            >
+              <h3 class="mb-2">Thank you!</h3>
+              <p class="mb-6 text-lg">
+                Your request has been received. One of our local agents will
+                reach out to you shortly with personalized options.
+              </p>
+              <button id="lead-form-again" type="button" class="btn btn-primary">
+                Submit Another Form
+              </button>
+            </div>
           </AnimatedSection>
         </div>
       </div>
     </div>
   </section>
   <!-- /Lead Form -->
+
+  <script>
+    const leadForm = document.getElementById(
+      "lead-form-form",
+    ) as HTMLFormElement | null;
+    const leadFormSuccess = document.getElementById("lead-form-success");
+    const leadFormAgain = document.getElementById("lead-form-again");
+
+    leadForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      // Let the browser enforce the required fields and checkboxes.
+      if (!leadForm.checkValidity()) {
+        leadForm.reportValidity();
+        return;
+      }
+
+      leadForm.classList.add("hidden");
+      leadFormSuccess?.classList.remove("hidden");
+      leadForm.reset();
+      leadFormSuccess?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    leadFormAgain?.addEventListener("click", () => {
+      leadFormSuccess?.classList.add("hidden");
+      leadForm?.classList.remove("hidden");
+      leadForm?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  </script>
 </Base>
